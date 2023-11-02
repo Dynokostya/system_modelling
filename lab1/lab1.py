@@ -119,7 +119,7 @@ def task7():
     print()
 
 
-if __name__ == '__main__':
+def main():
     M = random.randint(1, 2**32)
     Z = 123456789
     MOD = 2**32
@@ -132,3 +132,6 @@ if __name__ == '__main__':
     task4(rand, num_amount)
     task5_6(rand, num_amount)
     task7()
+
+
+main()
