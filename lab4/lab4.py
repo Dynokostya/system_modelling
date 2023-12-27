@@ -126,9 +126,6 @@ def partial_correlation_coefficients_manual(x):
                 # Коефіцієнти кореляції між j та іншими змінними, крім i
                 r_jk = [correlation_matrix[j][k] for k in range(num_variables) if k != i and k != j]
 
-                # Коефіцієнти кореляції між іншими змінними, крім i та j
-                r_kk = [correlation_matrix[k][l] for k in range(num_variables) for l in range(k + 1, num_variables) if k != i and k != j and l != i and l != j]
-
                 # Обчислення детермінантів для чисельника та знаменника формули часткової кореляції
                 numerator = r_ij - sum(r_ik[l] * r_jk[l] for l in range(len(r_ik)))
                 denominator = (1 - sum(r_ik[l] ** 2 for l in range(len(r_ik)))) * (1 - sum(r_jk[l] ** 2 for l in range(len(r_jk))))
